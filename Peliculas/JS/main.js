@@ -1,19 +1,29 @@
+import Pelicula from './Pelicula.js'
 
-class Pelicula{
-    constructor(nombre, genero, año,duracion ){
-        this.nombre=nombre;
-        this.genero=genero;
-        this.duracion=duracion;
-        this.año=año;
-    }
-    getDuracionEnHoras(){
-        let resultado = this.duracion/60 ;
+class Main {
+    constructor() {
 
-        return resultado;
+        document.querySelector('#btnAgregar').addEventListener('click', this.onAgregar);
     }
+
+    onAgregar() {
+
+        let nombre = document.querySelector('#nombre').value;
+        let genero = document.querySelector('#genero').value;
+        let año = document.querySelector('#año').value;
+        let duracion = document.querySelector('#duracion').value;
+  
+
+        let p1 = new Pelicula(nombre.value,
+            genero.value,
+            Number(año.value),
+            Number(duracion.value));
+    }
+
 }
-var p1 = new Pelicula('Avengers','Acciòn', 2017, 120);
-var p2 = new Pelicula('Harry Potter');
 
-console.log(p1)
-console.log(p2)
+var m = new Main();
+
+//carrito de compras y para este carrito de compras se debe hacer la clase de productos. Esta clase de producto va a tener el nombre del producto, la cantidad, y el precio unitario. estos son los atributos y como metodos va a tener dos metodo uno regresa el monto total enpesos y el otro el precio total en dolares.
+// el html va atener u nformulario donde se puede capturr el nombre del producto la cantida y el precio unitario.
+//y en el boton se hara un instancia de ese producto.
